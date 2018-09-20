@@ -40,7 +40,8 @@ export default {
   name: "Demo",
   data: function() {
     return {
-      setPosY: 0
+      setPosY: 0,
+      test:''
     };
   },
   mounted() {},
