@@ -49,13 +49,13 @@ export default {
     handleDragPosMove(e) {
       // 获取
       let msgSendBox = this.$refs.msgSendBox,
-          msgShowBox = this.$refs.msgShowBox,
-          scroll = getScrollOffsets(),
-          startY = e.clientY + scroll.y,
-          _startY = parseInt(startY);
-          document.addEventListener("mousemove", moveHandler, true);
-          document.addEventListener("mouseup", upHandler, true);
-        if (event.stopPropagation) event.stopPropagation();
+        msgShowBox = this.$refs.msgShowBox,
+        scroll = getScrollOffsets(),
+        startY = e.clientY + scroll.y,
+        _startY = parseInt(startY);
+      document.addEventListener("mousemove", moveHandler, true);
+      document.addEventListener("mouseup", upHandler, true);
+      if (event.stopPropagation) event.stopPropagation();
       //标准模型
       else event.cancelBubble = true;
       //现在阻止任何默认操作
