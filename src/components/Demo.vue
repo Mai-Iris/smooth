@@ -41,7 +41,7 @@ export default {
   data: function() {
     return {
       setPosY: 0,
-      test:''
+      test: ""
     };
   },
   mounted() {},
@@ -49,14 +49,14 @@ export default {
     handleDragPosMove(e) {
       // 获取
       let msgSendBox = this.$refs.msgSendBox,
-        msgShowBox = this.$refs.msgShowBox,
-        scroll = getScrollOffsets(),
-        startY = e.clientY + scroll.y,
-        _startY = parseInt(startY);
-      document.addEventListener("mousemove", moveHandler, true);
-      document.addEventListener("mouseup", upHandler, true);
-      if (event.stopPropagation)
-        event.stopPropagation(); //标准模型
+          msgShowBox = this.$refs.msgShowBox,
+          scroll = getScrollOffsets(),
+          startY = e.clientY + scroll.y,
+          _startY = parseInt(startY);
+          document.addEventListener("mousemove", moveHandler, true);
+          document.addEventListener("mouseup", upHandler, true);
+        if (event.stopPropagation) event.stopPropagation();
+      //标准模型
       else event.cancelBubble = true;
       //现在阻止任何默认操作
       if (event.preventDefault) event.preventDefault();
@@ -96,8 +96,8 @@ export default {
           msgSendBox.style.height = "140px";
           msgShowBox.setAttribute("style", "height:calc(100% - 140px)");
         }
-        if (e.stopPropagation)
-          e.stopPropagation(); //标准模型
+        if (e.stopPropagation) e.stopPropagation();
+        //标准模型
         else e.cancelBubble = true;
       }
       function upHandler(e) {
@@ -105,8 +105,8 @@ export default {
         //注销捕获事件处理程序
         document.removeEventListener("mousemove", moveHandler, true);
         document.removeEventListener("mouseup", upHandler, true);
-        if (e.stopPropagation)
-          e.stopPropagation(); //标准模型
+        if (e.stopPropagation) e.stopPropagation();
+        //标准模型
         else e.cancelBubble = true;
       }
       function getScrollOffsets(w) {
@@ -126,8 +126,8 @@ export default {
       this.$refs.topLeftBox.scrollTo(0, -40, 300);
     },
     listenScroll(pos) {},
-    leftPullDownScrollSync(pos){
-        // console.log(pos)
+    leftPullDownScrollSync(pos) {
+      // console.log(pos)
     }
   },
   components: { scrollBar }
